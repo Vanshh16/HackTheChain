@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .faq-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            padding: 10px;
+            background-color: null;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            transition: font-size 0.3s; /* Add a transition for smooth font size change */
+        }
+        .toggle-button {
+            flex-shrink: 0;
+            margin-left: 500px;
+            /* padding: 8px; */
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            /* border-radius: 5px; */
+            cursor: pointer;
+        }
+
+
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            background-color: #CB2098;
+            margin-bottom: 10px;
+            /* border-radius: 5px; */
+            color: #fff; /* Set text color to white for better visibility */
+            transition: font-size 0.3s; /* Add a transition for smooth font size change */
+        }
+
+        .open {
+            font-size: 80%; /* Adjust the font size when the answer is open */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="faq-container">
+        <div class="faq-question ques-1" onclick="toggleAnswer(1)">Can I work on a project I started before the hackathon?</div>
+        <button class="toggle-button" onclick="toggleAnswer(1)">Toggle Answer</button>
+        <div class="faq-answer" id="answer1"> Yes, you can work on a project you started before the hackathon.
+            However, you must disclose this information to the judges during
+            the judging process.</div>
+    
+        <div class="faq-question ques-2" onclick="toggleAnswer(2)"> What happens if I need help during the hackathon?</div>
+        <button class="toggle-button" onclick="toggleAnswer(2)">Toggle Answer</button>
+        <div class="faq-answer" id="answer2"> We will have mentors available to help you with any technical or
+            non-technical issues you may face during the hackathon. You can
+            also reach out to the organizers via the Discord server.</div>
+    
+        <div class="faq-question ques-3" onclick="toggleAnswer(3)"> What happens if I don't have an idea for a project?</div>
+        <button class="toggle-button" onclick="toggleAnswer(3)">Toggle Answer</button>
+        <div class="faq-answer" id="answer3"> We will have mentors available to help you with any technical or
+            non-technical issues you may face during the hackathon. You can
+            also reach out to the organizers via the Discord server.</div>
+    <div class="faq-question ques-4" onclick="toggleAnswer(4)"> Can I join a team or do I have to come with one?</div>
+    <button class="toggle-button" onclick="toggleAnswer(4)">Toggle Answer</button>
+        <div class="faq-answer" id="answer4"> You can join a team or come with one. If you don't have a team, we
+            will have a team formation session at the beginning of the
+            hackathon where you can meet other participants and form a team.</div>
+    <div class="faq-question ques-5" onclick="toggleAnswer(5)"> What happens after the hackathon ends?</div>
+    <button class="toggle-button" onclick="toggleAnswer(5)">Toggle Answer</button>
+        <div class="faq-answer" id="answer5"> Each team's project would be evaluated by the judges, and the
+            winners would be announced. The top three teams would be awarded
+            prizes. The other teams would be mentored to help them improve and
+            complete their projects.</div>
+    </div>
+
+<script>
+    var openAnswerId = null;
+
+    function toggleAnswer(id) {
+        var answer = document.getElementById('answer' + id);
+        var questions = document.querySelectorAll('.faq-question');
+        if (openAnswerId !== null && openAnswerId !== id) {
+            var openAnswer = document.getElementById('answer' + openAnswerId);
+            openAnswer.style.display = 'none';
+            questions.forEach(function(question){
+                question.classList.remove('open');
+            })        
+        }
+
+        if (answer.style.display === 'none') {
+            answer.style.display = 'block';
+            openAnswerId = id;
+            document.querySelector(".ques-" + id).classList.add('open');
+        } else {
+            answer.style.display = 'none';
+            openAnswerId = null;
+            document.querySelector(".ques-" + id).classList.remove('open');
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<style>
+    .faq-above {
+      position: relative;
+      top: 96px;
+      height: 1px;
+      border-top-width: 1px;
+      border-color: #454545;
+
+    }
+
+    #faqs {
+      --tw-divide-y-reverse: 0;
+      border-top-width: 0;
+      border-bottom-width: 0;
+    }
+
+    .ps-img {
+      width: 250px;
+    }
+
+    .faq {
+      /* margin-right: 200px; */
+      padding: 7%;
+    }
+
+    .faq-container {
+      max-width: 700px;
+      float: left;
+      padding-right: 48px;
+      padding-left: 48px;
+    }
+
+    .faq-heading {
+      margin-left: 10px;
+      margin-bottom: 40px;
+
+    }
+
+    .heading {
+      font-weight: bold;
+      font-size: 32px;
+      margin-bottom: 20px;
+      font-family: clash display, impact, serif;
+    }
+
+    .faq-question {
+      cursor: pointer;
+      padding: 10px;
+      background-color: null;
+      padding-bottom: 0;
+      /* margin-bottom: 5px; */
+      /* border-radius: 5px; */
+      font-size: 18px;
+      transition: font-size 0.5s;
+    }
+
+    .toggle-button {
+      position: relative;
+      /* margin-top: 10px; */
+      background-color: null;
+      color: #903AFF;
+      border: none;
+      font-size: 25px;
+      left: 470px;
+      bottom: 35px;
+      /* border-radius: 5px; */
+      cursor: pointer;
+    }
+
+    .faq-hr {
+      width: 80%;
+      border-color: rgb(212, 52, 254);
+      margin-left: 10px;
+      /* padding-top: 10px; */
+      padding-bottom: 5px;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 20px;
+      /* font-size:15px; */
+      /* background-color: #CB2098; */
+      background-color: #903AFF;
+      margin-bottom: 10px;
+      /* border-radius: 5px; */
+      color: black;
+      transition: font-size 0.5s;
+    }
+
+    .open {
+      font-size: 80%;
+    }
+
+    .faq-image {
+      float: right;
+      width: 500px;
+      /* margin-left: 100px; */
+    }
+
+    @media screen and (max-width: 480px) {
+      .faq-image {
+        /* float: right; */
+        width: 300px;
+        /* margin-left: 100px; */
+      }
+
+      .toggle-button {
+        left: 200px;
+        bottom: 5px;
+      }
+    }
+  </style>

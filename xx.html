@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .faq-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            width: 800px;
+            text-align: center;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            width: 800px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="faq-container">
+    <div class="faq-question" onclick="toggleAnswer(1)">Can I work on a project I started before the hackathon?</div>
+    <div class="faq-answer" id="answer1"> Yes, you can work on a project you started before the hackathon.
+        However, you must disclose this information to the judges during
+        the judging process.</div>
+
+    <div class="faq-question" onclick="toggleAnswer(2)"> What happens if I need help during the hackathon?</div>
+    <div class="faq-answer" id="answer2"> We will have mentors available to help you with any technical or
+        non-technical issues you may face during the hackathon. You can
+        also reach out to the organizers via the Discord server.</div>
+
+    <div class="faq-question" onclick="toggleAnswer(3)"> What happens if I don't have an idea for a project?</div>
+    <div class="faq-answer" id="answer3"> We will have mentors available to help you with any technical or
+        non-technical issues you may face during the hackathon. You can
+        also reach out to the organizers via the Discord server.</div>
+<div class="faq-question" onclick="toggleAnswer(4)"> Can I join a team or do I have to come with one?</div>
+    <div class="faq-answer" id="answer4"> You can join a team or come with one. If you don't have a team, we
+        will have a team formation session at the beginning of the
+        hackathon where you can meet other participants and form a team.</div>
+<div class="faq-question" onclick="toggleAnswer(5)"> What happens after the hackathon ends?</div>
+    <div class="faq-answer" id="answer5"> Each team's project would be evaluated by the judges, and the
+        winners would be announced. The top three teams would be awarded
+        prizes. The other teams would be mentored to help them improve and
+        complete their projects.</div>
+</div>
+
+<script>
+    var openAnswerId = null;
+
+    function toggleAnswer(id) {
+        var answer = document.getElementById('answer' + id);
+
+        if (openAnswerId !== null && openAnswerId !== id) {
+            var openAnswer = document.getElementById('answer' + openAnswerId);
+            openAnswer.style.display = 'none';
+        }
+
+        if (answer.style.display === 'none') {
+            answer.style.display = 'block';
+            openAnswerId = id;
+        } else {
+            answer.style.display = 'none';
+            openAnswerId = null;
+        }
+    }
+</script>
+
+</body>
+</html>
